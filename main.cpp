@@ -27,7 +27,7 @@ struct Graph {
 
     void EdgeD(int b, int e){
 
-        // wstawiam krawędź jednokierunkową prowadzącą z wierzchołka b do e
+        // wstawiam krawędź skierowaną prowadzącą z wierzchołka b do e
 
         g[b].push_back(Ed(e));
 
@@ -35,7 +35,7 @@ struct Graph {
 
     void EdgeU(int b, int e){
 
-        // wstawiam krawędź dwukierunkową reprezentowaną jako dwie krawędzie kierunkowe z b do e oraz z e do b
+        // wstawiam krawędź nieskierowaną reprezentowaną jako dwie krawędzie skierowane z b do e oraz z e do b
 
         g[b].push_back(Ed(e, g[e].size() + (b==e) ));
         g[e].push_back(Ed(b, g[b].size()-1 ));
